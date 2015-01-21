@@ -74,22 +74,22 @@ pacsearch () {
 
 #######shell opt#########
 #bind TAB:menu-complete
-shopt -s autocd                                            #cd automatically
-shopt -s cdspell                                           # autocorrection
-shopt -s checkwinsize                              # always have actual $LINES & $COLUMNS
-shopt -u cmdhist                                        # use semicolon instead of newline
-shopt -u direxpand                                      # do not expand tilde and so on
-shopt -s dotglob                                          # echo * sees dotfiles
-shopt -s extdebug                                      # MOAR debugging
-shopt -s globstar                                         # '**' support
-shopt -u gnu_errfmt                                   # POSIX, not GNU error messages
-shopt -s histappend                                   # Appends history to $HISTFILE instead of overwriting
-shopt -s huponexit                                     # kill all bg jobs on exit
+shopt -s autocd                                             #cd automatically
+shopt -s cdspell                                            # autocorrection
+shopt -s checkwinsize                                       # always have actual $LINES & $COLUMNS
+shopt -u cmdhist                                            # use semicolon instead of newline
+shopt -u direxpand                                          # do not expand tilde and so on
+shopt -s dotglob                                            # echo * sees dotfiles
+shopt -s extdebug                                           # MOAR debugging
+shopt -s globstar                                           # '**' support
+shopt -u gnu_errfmt                                         # POSIX, not GNU error messages
+shopt -s histappend                                         # Appends history to $HISTFILE instead of overwriting
+shopt -s huponexit                                          # kill all bg jobs on exit
 shopt -u lithist                                            # use semicolons instead of newlines in history
-shopt -s no_empty_cmd_completion      # empty command completion is stupid
-shopt -u nocaseglob                                 # filenames ARE case-sensitive
-shopt -u nocasematch                             # comparisons ARE case-sensitive
-shopt -s xpg_echo                                    # echo has '-e' by default
+shopt -s no_empty_cmd_completion                            # empty command completion is stupid
+shopt -u nocaseglob                                         # filenames ARE case-sensitive
+shopt -u nocasematch                                        # comparisons ARE case-sensitive
+shopt -s xpg_echo                                           # echo has '-e' by default
 
 
 ################################
