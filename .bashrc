@@ -99,7 +99,7 @@ shopt -s xpg_echo                                    # echo has '-e' by default
 export EDITOR=nano
 export HISTCONTROL=ignoredups
 export HISTCONTROL=ignoreboth
-export PS1="(chroot) $PS1"
+
 
 ############Man pages##############
 
