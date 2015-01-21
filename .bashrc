@@ -217,7 +217,6 @@ PROMPT_COMMAND='[[ ${__new_wd:=$PWD} != $PWD ]] && ls ; __new_wd=$PWD' # ls  aft
 #fi
 
 ######################### WELCOME SCREEN #################################
-clear
   echo -ne "${BCyan}" "#-------> Hello Master <-------#" ;
   echo -e ;
 ############
