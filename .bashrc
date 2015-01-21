@@ -228,6 +228,6 @@ fi
 clear
   echo -ne "${BCyan}" "Hello Master." ;
   echo -e ;
-############
+
 
 
