@@ -203,22 +203,22 @@ PROMPT_COMMAND='[[ ${__new_wd:=$PWD} != $PWD ]] && ls ; __new_wd=$PWD' # ls  aft
 
 # This must be last:
 # Start X11 automatically if in tty1
-if [ -z "$DISPLAY" ]; then
-    tty="`tty`"
-    for t in "/dev/vc/1" "vc/1" "/dev/tty1" "tty1"; do
-        if [ "$tty" = "$t" ]; then
-            n=7
-            echo "Starting X11 in $n seconds ... Ctrl+C to abort ..."
-            echo
-            sleep $n
-            exec startx
-        fi
-    done
-fi
+#if [ -z "$DISPLAY" ]; then
+ #   tty="`tty`"
+#    for t in "/dev/vc/1" "vc/1" "/dev/tty1" "tty1"; do
+#        if [ "$tty" = "$t" ]; then
+#            n=7
+#            echo "Starting X11 in $n seconds ... Ctrl+C to abort ..."
+#            echo
+#            sleep $n
+#            exec startx
+#        fi
+#    done
+#fi
 
 ######################### WELCOME SCREEN #################################
 clear
-  echo -ne "${BCyan}" "Hello Master." ;
+  echo -ne "${BCyan}" "#-------> Hello Master <-------#" ;
   echo -e ;
 ############
 
