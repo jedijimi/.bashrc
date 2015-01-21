@@ -72,10 +72,8 @@ pacsearch () {
                 -e 's#^.*/.* [0-9].*#\\033[0;36m&\\033[0;37m#g' )"
 }
 
-#############################
-
+#######shell opt#########
 #bind TAB:menu-complete              
-
 shopt -s autocd                                            #cd automatically
 shopt -s cdspell                                           # autocorrection
 shopt -s checkwinsize                              # always have actual $LINES & $COLUMNS
@@ -95,14 +93,12 @@ shopt -s xpg_echo                                    # echo has '-e' by default
 
 
 ################################
-
 export EDITOR=nano
 export HISTCONTROL=ignoredups
 export HISTCONTROL=ignoreboth
 
 
 ############Man pages##############
-
 export LESS_TERMCAP_mb=$'\E[01;31m' 
 export LESS_TERMCAP_md=$'\e[01;34m' 
 export LESS_TERMCAP_me=$'\E[0m'
@@ -110,20 +106,6 @@ export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\e[1;44;33m'      #Blue background, yellow text
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
-case "$TERM" in
-xterm)
-export LESS_TERMCAP_md=$'\e[01;34m'
-export LESS_TERMCAP_us=$'\E[01;32m'
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-;;
-xterm-256color)
-export LESS_TERMCAP_md=$'\e[01;34m'
-export LESS_TERMCAP_us=$'\E[01;32m'
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-;;
-esac
 
 #######colors defined#######
 # Reset.
@@ -210,9 +192,6 @@ if [ "$TERM" == "xterm" ]; then
     export TERM=xterm-256color
 fi
 
-# Set GUI terminal titles.
-case "$TERM" in
-*xterm*|rxvt*|Eterm|aterm|kterm|gnome*|interix)
 PROMPT_COMMAND='[[ ${__new_wd:=$PWD} != $PWD ]] && ls ; __new_wd=$PWD' # ls  after cding
     ;;
 *)
@@ -229,6 +208,7 @@ export PS2="\[$Cyan\]Secondary->\[$Colour_Off\] "
 export PS3="\[$Cyan\]Select option->\[$Colour_Off\] "
 export PS4="\[$Cyan\]+xtrace $LINENO->\[$Colour_Off\] "
 
+#########just some silly console tricks#########
 # This must be last:
 # Start X11 automatically if in tty1
 if [ -z "$DISPLAY" ]; then
