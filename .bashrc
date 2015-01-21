@@ -26,7 +26,7 @@ if [ "$TERM" = "linux" ]; then
    echo -en "\e]PE3CB6F3" #cyan
    echo -en "\e]P7AEAEAE" #lightgrey
    echo -en "\e]PFDBDDE4" #white
-fi 
+fi
 
 ##### directory #Thanks beardedlinuxgeek & z3bra######
 up() {
@@ -40,7 +40,7 @@ pwd
 
 ##### Aliases#####
 alias ls='ls -F --group-directories-first --color'
-alias lS='ls -lrS' 
+alias lS='ls -lrS'
 alias lh='ls -lh'
 alias l.='ls .[A-Za-z]*'
 alias grep='grep --color=auto'
@@ -73,7 +73,7 @@ pacsearch () {
 }
 
 #######shell opt#########
-#bind TAB:menu-complete              
+#bind TAB:menu-complete
 shopt -s autocd                                            #cd automatically
 shopt -s cdspell                                           # autocorrection
 shopt -s checkwinsize                              # always have actual $LINES & $COLUMNS
@@ -99,8 +99,8 @@ export HISTCONTROL=ignoreboth
 
 
 ############Man pages##############
-export LESS_TERMCAP_mb=$'\E[01;31m' 
-export LESS_TERMCAP_md=$'\e[01;34m' 
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\e[01;34m'
 export LESS_TERMCAP_me=$'\E[0m'
 export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\e[1;44;33m'      #Blue background, yellow text
@@ -194,7 +194,7 @@ fi
 
 # Prompt, looks like:
 # ┌─[username@host]-[time date]-[directory]
-# └─[$]-> 
+# └─[$]->
 export PS1="\n\[$Cyan\]┌─[\[$BBlue\]\u\[$Blue\]\[$Cyan\]]-[\[$Colour_Off\]\t $(date +'%a %d %b')\[$Cyan\]]-\n\[$Cyan\]└─[\[$BGreen\]\w\[$Cyan\]]->\[$Colour_Off\] "
 export PS2="\[$Cyan\]Secondary->\[$Colour_Off\] "
 export PS3="\[$Cyan\]Select option->\[$Colour_Off\] "
