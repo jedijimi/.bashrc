@@ -192,14 +192,6 @@ if [ "$TERM" == "xterm" ]; then
     export TERM=xterm-256color
 fi
 
-PROMPT_COMMAND='[[ ${__new_wd:=$PWD} != $PWD ]] && ls ; __new_wd=$PWD' # ls  after cding
-    ;;
-*)
-    ;;
-esac
-
-eval $( dircolors -b /etc/dircolors )
-
 # Prompt, looks like:
 # ┌─[username@host]-[time date]-[directory]
 # └─[$]-> 
@@ -207,8 +199,8 @@ export PS1="\n\[$Cyan\]┌─[\[$BBlue\]\u\[$Blue\]\[$Cyan\]]-[\[$Colour_Off\]\t
 export PS2="\[$Cyan\]Secondary->\[$Colour_Off\] "
 export PS3="\[$Cyan\]Select option->\[$Colour_Off\] "
 export PS4="\[$Cyan\]+xtrace $LINENO->\[$Colour_Off\] "
+PROMPT_COMMAND='[[ ${__new_wd:=$PWD} != $PWD ]] && ls ; __new_wd=$PWD' # ls  after cding
 
-#########just some silly console tricks#########
 # This must be last:
 # Start X11 automatically if in tty1
 if [ -z "$DISPLAY" ]; then
@@ -228,6 +220,6 @@ fi
 clear
   echo -ne "${BCyan}" "Hello Master." ;
   echo -e ;
-
+############
 
 
