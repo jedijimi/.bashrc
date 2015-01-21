@@ -39,7 +39,7 @@ pwd
 }
 
 ##### Aliases#####
-alias ls='ls -F --group-directories-first --color'
+alias ls='ls --group-directories-first --color '     # note the trailing space to trigger chaining
 alias lS='ls -lrS'
 alias lh='ls -lh'
 alias l.='ls .[A-Za-z]*'
