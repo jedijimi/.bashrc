@@ -28,17 +28,17 @@ if [ "$TERM" = "linux" ]; then
    echo -en "\e]PFDBDDE4" #white
 fi
 
-##### directory #Thanks beardedlinuxgeek & z3bra######
+##### directory ######
 up() {
-lv=${1:-1}
-while test $lv -gt 0; do
-builtin cd ..
-lv=$((lv - 1))
-done
-pwd
+           lv=${1:-1}
+              while test $lv -gt 0; do
+            builtin cd ..
+           lv=$((lv - 1))
+    done
+  pwd
 }
 
-##### Aliases#####
+##### Aliases #####
 alias ls='ls --group-directories-first --color '     # note the trailing space to trigger chaining
 alias lS='ls -lrS'
 alias lh='ls -lh'
@@ -219,6 +219,6 @@ PROMPT_COMMAND='[[ ${__new_wd:=$PWD} != $PWD ]] && ls ; __new_wd=$PWD' # ls  aft
 ######################### WELCOME SCREEN #################################
   echo -ne "${BCyan}" "#-------> Hello Master <-------#" ;
   echo -e ;
-############
+
 
 
