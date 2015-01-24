@@ -80,7 +80,7 @@ alias grubup='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 # 'geany-edit' ---------------------------------------------------
 alias edit='geany '
-alias Sedit='sudo geany'
+alias sedit='sudo geany'
 
 # 'human readable' -------------------------------------------
 alias df='df -Th'
@@ -114,7 +114,4 @@ alias errors='journalctl -b'
 alias inxi='inxi -F -M'
 alias wunder="telnet rainmaker.wunderground.com 3000"
 alias xx='exit'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
 alias sa='source ~/.bashrc;echo "Bash is sourced."'
