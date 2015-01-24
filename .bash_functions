@@ -37,3 +37,15 @@ function pacs () {
                 -e 's#community/.*#\\033[1;35m&\\033[0;37m#g' \
                 -e 's#^.*/.* [0-9].*#\\033[0;36m&\\033[0;37m#g' )"
 }
+
+# 'man-pages ---------------------------------------
+function man() {
+    env LESS_TERMCAP_mb=$'\E[01;31m' \
+    LESS_TERMCAP_md=$'\e[01;34m' \
+    LESS_TERMCAP_me=$'\E[0m' \
+    LESS_TERMCAP_se=$'\E[0m' \
+    LESS_TERMCAP_so=$'\e[1;44;33m'  \
+    LESS_TERMCAP_ue=$'\E[0m' \
+    LESS_TERMCAP_us=$'\E[01;32m' \
+    man "$@"
+}
