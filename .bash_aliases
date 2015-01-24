@@ -24,7 +24,7 @@ alias lx='ls -lXB'                           #->sort/extension
 alias lz='ls -lSr'                            #->sort/size
 alias lt='ls -ltr'                             #->sort/date
 alias lr='ls -R'                              #->recursive
-alias lm='ls -al|more'                 #->piped
+alias lm='ls -al --color=always|more'                 #->piped
 alias l='ls'
 
 # 'cd'-wizardry --------------------------------------------------
