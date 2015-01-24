@@ -11,7 +11,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>
 #
-.
+
 # alias ability for 'sudo'
 alias sudo="sudo "
 
@@ -88,6 +88,11 @@ alias du='du -h'
 alias datetime='date "+%A, %d-%m-%Y - %T %Z"'
 alias which='type -a'
 alias perm='stat --printf "%a %n \n"'
+
+# 'rm' to save myself -----------------------------------------
+alias rm='rm -iv '
+alias cp='cp -iv '
+
 
 #'ping'-limit -----------------------------------------------------
 alias ping='ping -c 3'
