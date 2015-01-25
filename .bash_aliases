@@ -68,6 +68,8 @@ alias writedvd='dd if=dvd.iso of=/dev/cdrecorder'
 alias pacman='pacman --color=always'
 alias update='sudo pacman -Syu'
 alias pacin='sudo pacman -S '
+alias qi='pacman -Qi'
+alias qimore='pacman -Qi | more'        #(this is to search whole database)
 alias orphans='[[ -n $(pacman -Qdt) ]] && sudo pacman -Rs $(pacman -Qdtq) || echo "no orphans to remove"'
 alias pkgs='comm -23 <(pacman -Qeq | sort) <(pacman -Qgq base base-devel | sort)'
 
@@ -76,7 +78,7 @@ alias yaoin='yaourt -S'
 alias yaoch='yaourt -Ss'
 
 # 'grub-update' -------------------------------------------------
-alias grubup='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias grub-up='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 # 'geany-edit' ---------------------------------------------------
 alias edit='geany '
@@ -89,9 +91,10 @@ alias datetime='date "+%A, %d-%m-%Y - %T %Z"'
 alias which='type -a'
 alias perm='stat --printf "%a %n \n"'
 
-# 'rm' to save myself -----------------------------------------
+# 'to save me from myself ----------------------------------
 alias rm='rm -iv '
 alias cp='cp -iv '
+alias rmdir='rm -ivR'
 
 
 #'ping'-limit -----------------------------------------------------

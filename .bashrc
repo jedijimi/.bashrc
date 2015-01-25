@@ -99,7 +99,7 @@ if [ "$TERM" == "xterm" ]; then
 fi
 
 ## source useful files ----------------------------
-#[[ -r /usr/share/bash-completion/bash_completion ]] && source /usr/share/bash-completion/bash_completion
+[[ -r /usr/share/bash-completion/bash_completion ]] && source /usr/share/bash-completion/bash_completion
 [[ -f ~/.bash_aliases ]] && source ~/.bash_aliases
 [[ -f ~/.bash_functions ]] && source ~/.bash_functions
 

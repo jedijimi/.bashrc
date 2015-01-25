@@ -12,12 +12,6 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>
 #
-
-## h -grep history ---------------------------------
-function h() {
-        fc -l 1 -1 | sed -n "/$1/s/^ */!/p" | tail -n 50
-}
-alias h=' h'
  
 # 'move up a dir ------------------------------------
 function up() {
@@ -44,8 +38,17 @@ function man() {
     LESS_TERMCAP_md=$'\e[01;34m' \
     LESS_TERMCAP_me=$'\E[0m' \
     LESS_TERMCAP_se=$'\E[0m' \
-    LESS_TERMCAP_so=$'\e[1;44;33m'  \
+    LESS_TERMCAP_so=$'\e[1;44;33m' \
     LESS_TERMCAP_ue=$'\E[0m' \
     LESS_TERMCAP_us=$'\E[01;32m' \
     man "$@"
+}
+
+# 'git-status ------------------------------------------
+function g {
+    if [[ $# > 0 ]]; then
+        git $@
+    else
+        git status
+    fi
 }
