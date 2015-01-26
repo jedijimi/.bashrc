@@ -82,7 +82,22 @@ TERM xterm-debian
 RESET 0 # reset to "normal" color
 DIR 01;34 # directory
 LINK 01;36 # symbolic link. (If you set this to 'target' instead of a
- # numerical value, the color is as for the file pointed to.)
+# numerical value, the color is as for the file pointed to.)
+ 
+# COLOR needs one of these arguments: 'tty' colorizes output to ttys, but not
+# pipes. 'all' adds color characters to all output. 'none' shuts colorization
+# off.
+COLOR all
+ 
+# Extra command line options for ls go here.
+# Basically these ones are:
+# -F = show '/' for dirs, '*' for executables, etc.
+# -T 0 = don't trust tab spacing when formatting ls output.
+# -b = better support for special characters
+OPTIONS -F -b -T 0
+
+# EIGHTBIT, followed by '1' for on, '0' for off. (8-bit output)
+EIGHTBIT 1
  
 MULTIHARDLINK 00 # regular file with more than one link
 FIFO 40;33 # pipe
@@ -236,7 +251,7 @@ EXEC 01;32
 
 # misc -------------------------------------------------
 .readme 01;30;41
-.conf 01;30;46
+.conf 01;30
 .log 01;30
 *~ 01;36
 *# 01;36
@@ -258,3 +273,20 @@ EXEC 01;32
 .blg 01;30
 .toc 01;30
 
+# bash file types -----------------------------------------------
+.bash 01;32
+.bashrc 01;32
+.bash_aliases 01;32
+.bash_functions 01;32
+.bash_history 01;32
+.bash_logout 01;32
+.bash_profile 01;32
+.dircolors 01;32
+
+# systemd file types ------------------------------------------
+*.mount 01;32
+*.path 01;33
+*.rules 01;34
+*.socket 00;35
+*.service 00;33
+*.target 01;36

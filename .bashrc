@@ -37,7 +37,6 @@ shopt -u nocaseglob                                         # filenames ARE case
 shopt -u nocasematch                                        # comparisons ARE case-sensitive
 shopt -s xpg_echo                                           # echo has '-e' by default
 
-
 # exports ---------------------------------------------
 export EDITOR=nano
 export HISTCONTROL=ignoredups
