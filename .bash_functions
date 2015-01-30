@@ -32,17 +32,6 @@ function pacs () {
                 -e 's#^.*/.* [0-9].*#\\033[0;36m&\\033[0;37m#g' )"
 }
 
-# 'man-pages ---------------------------------------
-function man() {
-    env LESS_TERMCAP_mb=$'\E[01;31m' \
-    LESS_TERMCAP_md=$'\e[01;34m' \
-    LESS_TERMCAP_me=$'\E[0m' \
-    LESS_TERMCAP_se=$'\E[0m' \
-    LESS_TERMCAP_so=$'\e[1;44;33m' \
-    LESS_TERMCAP_ue=$'\E[0m' \
-    LESS_TERMCAP_us=$'\E[01;32m' \
-    man "$@"
-}
 
 # 'git-status ------------------------------------------
 function g {
@@ -88,6 +77,45 @@ function color-blocks () {
          for ((i=0; i<$pre; i++)); do echo -n " " ; done
          for ((i=0; i<=7; i++)); do echo -en "\e[3${i}m${chars} \e[1;3${i}m${chars}\e[m "; done; echo; echo
     unset i
+}
+
+# matrix fun -----------------------------------------
+function matrix()
+{
+               echo -e "\e[36m";
+               while :; do
+                               printf '%*c' $(($RANDOM % 30)) $(($RANDOM % 2));
+done
+}
+
+# Create directory and cd to it ----------------
+function mcd {
+               mkdir -p "$1" && cd "$1"
+}
+
+# Adds some text in the terminal frame (if applicable).
+
+function xtitle()
+{
+    case "$TERM" in
+    *term* | rxvt)
+        echo -en  "\e]0;$*\a" ;;
+    *)  ;;
+    esac
+}
+
+
+# Aliases that use xtitle -------------------------
+alias top='xtitle Processes on $HOST && top'
+alias make='xtitle Making $(basename $PWD) ; make'
+
+# Set title for term----------------------------------
+function man()
+{
+    for i ; do
+        xtitle The $(basename $1|tr -d .[:digit:]) manual
+        command man -a "$i"
+    done
 }
 
 
