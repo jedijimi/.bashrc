@@ -32,16 +32,6 @@ function pacs () {
                 -e 's#^.*/.* [0-9].*#\\033[0;36m&\\033[0;37m#g' )"
 }
 
-
-# 'git-status ------------------------------------------
-function g {
-    if [[ $# > 0 ]]; then
-        git $@
-    else
-        git status
-    fi
-}
-
 # Extract Files
 function extract() {
          if [ -f $1 ] ; then
@@ -94,7 +84,6 @@ function mcd {
 }
 
 # Adds some text in the terminal frame (if applicable).
-
 function xtitle()
 {
     case "$TERM" in
@@ -103,7 +92,6 @@ function xtitle()
     *)  ;;
     esac
 }
-
 
 # Aliases that use xtitle -------------------------
 alias top='xtitle Processes on $HOST && top'
