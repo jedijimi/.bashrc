@@ -17,7 +17,6 @@
 [[ $- != *i* ]] && return
 #PS1='[\u@\h \W]\$ '
 #PS1='\u \e[1;94m\W \e[0m\$ '
-eval $( dircolors -b ~/.dircolors )
 
 # bash-shell options------------------------------
 shopt -s autocd                                             # cd automatically
@@ -37,13 +36,21 @@ shopt -u nocaseglob                                         # filenames ARE case
 shopt -u nocasematch                                        # comparisons ARE case-sensitive
 shopt -s xpg_echo                                           # echo has '-e' by default
 
-# exports ---------------------------------------------
+# shell enviroment --------------------------------
 export EDITOR=nano
 export HISTCONTROL=ignoredups
 export HISTCONTROL=ignoreboth
+export HISTIGNORE='&:ls:ll:la:cd:exit:clear:history'
+export LESS_TERMCAP_mb=$'\E[01;31m'        
+export LESS_TERMCAP_md=$'\e[01;34m'                
+export LESS_TERMCAP_me=$'\E[0m'                         
+export LESS_TERMCAP_se=$'\E[0m'                         
+export LESS_TERMCAP_so=$'\e[1;44;33m'               
+export LESS_TERMCAP_ue=$'\E[0m'                           
+export LESS_TERMCAP_us=$'\E[01;32m' 
+eval $( dircolors -b ~/.dircolors )
 
 # colors for prompt --------------------------------
-# Reset.
 Colour_Off="\e[0m"      # Text Reset.
 
 # Regular Colours ----------------------------------
@@ -86,7 +93,6 @@ if [ "$TERM" = "linux" ]; then
    echo -en "\e]PFDBDDE4" #white
 fi
 
-
 # Turn on colours------------------------------------(unknown if this is useful)
 case "$TERM" in
     *color*)
@@ -128,8 +134,8 @@ PROMPT_COMMAND='[[ ${__new_wd:=$PWD} != $PWD ]] && ls ; __new_wd=$PWD' # ls  aft
 #fi
 
 ######################### WELCOME SCREEN #################################
-  echo -ne "${BCyan}" "#-------> Hello Master <-------#" ;
-  echo -e ;
+ # echo -ne "${Cyan}" "#-------> Hello Master <-------#" ;
+  #echo -e ;
 
 
 
